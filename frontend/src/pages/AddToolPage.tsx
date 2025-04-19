@@ -101,6 +101,7 @@ const AddToolPage: React.FC = () => {
       addTool({
         ...formData,
         available: true,
+        owner: currentUser.id, // Add the owner property
       });
       
       setIsSubmitting(false);
