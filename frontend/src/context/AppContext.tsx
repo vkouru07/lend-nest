@@ -153,7 +153,6 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
     if (!error) {
       setCurrentUser(null);
     }
-    return error;
   };
 
   const addTool = (tool: Omit<Tool, 'id' | 'addedDate' | 'timesLoaned'>) => {
