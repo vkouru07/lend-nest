@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider } from './context/AppContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -10,6 +10,8 @@ import ReservationPage from './pages/ReservationPage';
 import ReservationsListPage from './pages/ReservationsListPage';
 import ProfilePage from './pages/ProfilePage';
 import AddToolPage from './pages/AddToolPage';
+import AuthPage from './pages/AuthPage';
+import RequestsPage from './pages/RequestsPage';
 
 function App() {
   return (
@@ -26,7 +28,9 @@ function App() {
               <Route path="/reservations" element={<ReservationsListPage />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/add-tool" element={<AddToolPage />} />
-              <Route path="*" element={<div>Page not found</div>} />
+              <Route path="/auth" element={<AuthPage />} />
+              <Route path="/requests" element={<RequestsPage />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </main>
           <Footer />
